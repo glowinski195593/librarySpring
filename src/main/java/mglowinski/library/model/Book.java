@@ -1,15 +1,15 @@
 package mglowinski.library.model;
 
+
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-import lombok.Data;
-
-@Data
+@Document(collection="books")
 public class Book {
 
 	@Id
 	private String bookId;
-	
+
 	private String bookTitle;
 	private String bookAuthor;
 	private String bookIsbn;
@@ -18,11 +18,60 @@ public class Book {
 	
 	public Book() {}
 	
-	public Book(String bookTitle, String bookAuthor, String bookIsbn, String bookDescription, String bookCategory) {
+	public Book(String bookId, String bookTitle, String bookAuthor, String bookIsbn, String bookDescription, String bookCategory) {
+		this.setBookId(bookId);
+		this.setBookTitle(bookTitle);
+		this.setBookAuthor(bookAuthor);
+		this.setBookIsbn(bookIsbn);
+		this.setBookDescription(bookDescription);
+		this.setBookCategory(bookCategory);
+	}
+
+	public String getBookId() {
+		return bookId;
+	}
+
+	public void setBookId(String bookId) {
+		this.bookId = bookId;
+	}
+	
+	public String getBookTitle() {
+		return bookTitle;
+	}
+
+	public void setBookTitle(String bookTitle) {
 		this.bookTitle = bookTitle;
+	}
+
+	public String getBookAuthor() {
+		return bookAuthor;
+	}
+
+	public void setBookAuthor(String bookAuthor) {
 		this.bookAuthor = bookAuthor;
+	}
+
+	public String getBookIsbn() {
+		return bookIsbn;
+	}
+
+	public void setBookIsbn(String bookIsbn) {
 		this.bookIsbn = bookIsbn;
+	}
+
+	public String getBookDescription() {
+		return bookDescription;
+	}
+
+	public void setBookDescription(String bookDescription) {
 		this.bookDescription = bookDescription;
+	}
+
+	public String getBookCategory() {
+		return bookCategory;
+	}
+
+	public void setBookCategory(String bookCategory) {
 		this.bookCategory = bookCategory;
 	}
 }

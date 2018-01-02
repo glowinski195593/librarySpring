@@ -3,6 +3,8 @@ package mglowinski.library.mongoServices;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import mglowinski.library.model.User;
@@ -13,7 +15,7 @@ import mglowinski.library.services.UserService;
 public class MongoDBUserService implements UserService {
 
 	private final UserRepository repository;
-	 
+	
     @Autowired
     MongoDBUserService(UserRepository repository) {
         this.repository = repository;
@@ -27,7 +29,11 @@ public class MongoDBUserService implements UserService {
 
 	@Override
 	public User create(User user) {
+		PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(); 
+		String encodedPassword = passwordEncoder.encode(user.getUserPassword());  
+		user.setUserPassword(encodedPassword);
 		User createdUser = repository.save(user);
 		return createdUser;
 	}
+	
 }
