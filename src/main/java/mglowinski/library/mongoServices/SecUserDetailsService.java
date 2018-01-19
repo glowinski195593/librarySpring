@@ -2,6 +2,7 @@ package mglowinski.library.mongoServices;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
@@ -19,7 +20,12 @@ public class SecUserDetailsService implements UserDetailsService{
     @Override
     public UserDetails loadUserByUsername(String userEmail) {
         User user = userRepository.findByuserEmail(userEmail);
-        UserDetails details = new SecUserDetails(user);
-        return details;
+        if(user == null){
+            throw new UsernameNotFoundException(userEmail);
+        } 
+        else {
+        	UserDetails details = new SecUserDetails(user);
+        	return details;
+        }
     }
 }

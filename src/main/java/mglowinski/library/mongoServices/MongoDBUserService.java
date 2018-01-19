@@ -15,10 +15,12 @@ import mglowinski.library.services.UserService;
 public class MongoDBUserService implements UserService {
 
 	private final UserRepository repository;
+	private PasswordEncoder passwordEncoder;
 	
     @Autowired
-    MongoDBUserService(UserRepository repository) {
+    MongoDBUserService(UserRepository repository, PasswordEncoder passwordEncoder) {
         this.repository = repository;
+        this.passwordEncoder = passwordEncoder;
     }
  
 	@Override
@@ -29,11 +31,15 @@ public class MongoDBUserService implements UserService {
 
 	@Override
 	public User create(User user) {
-		PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(); 
 		String encodedPassword = passwordEncoder.encode(user.getUserPassword());  
 		user.setUserPassword(encodedPassword);
 		User createdUser = repository.save(user);
 		return createdUser;
 	}
 	
+	@Override
+	public User getUserByEmail(String email) {
+		User user = repository.findByuserEmail(email);
+		return user;
+	}
 }

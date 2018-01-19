@@ -1,6 +1,8 @@
 package mglowinski.library.model;
 
 
+import java.util.List;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -14,11 +16,11 @@ public class Book {
 	private String bookAuthor;
 	private String bookIsbn;
 	private String bookDescription;
-	private String bookCategory;
+	private List<Category> bookCategory;
 	
 	public Book() {}
 	
-	public Book(String bookId, String bookTitle, String bookAuthor, String bookIsbn, String bookDescription, String bookCategory) {
+	public Book(String bookId, String bookTitle, String bookAuthor, String bookIsbn, String bookDescription, List<Category> bookCategory) {
 		this.setBookId(bookId);
 		this.setBookTitle(bookTitle);
 		this.setBookAuthor(bookAuthor);
@@ -67,11 +69,11 @@ public class Book {
 		this.bookDescription = bookDescription;
 	}
 
-	public String getBookCategory() {
+	public List<Category> getBookCategory() {
 		return bookCategory;
 	}
 
-	public void setBookCategory(String bookCategory) {
+	public void setBookCategory(List<Category> bookCategory) {
 		this.bookCategory = bookCategory;
 	}
 }
