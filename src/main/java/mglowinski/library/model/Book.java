@@ -17,16 +17,18 @@ public class Book {
 	private String bookIsbn;
 	private String bookDescription;
 	private List<Category> bookCategory;
+	private String bookPublicationYear;
 	
 	public Book() {}
 	
-	public Book(String bookId, String bookTitle, String bookAuthor, String bookIsbn, String bookDescription, List<Category> bookCategory) {
+	public Book(String bookId, String bookTitle, String bookAuthor, String bookIsbn, String bookDescription, List<Category> bookCategory, String bookPublicationYear) {
 		this.setBookId(bookId);
 		this.setBookTitle(bookTitle);
 		this.setBookAuthor(bookAuthor);
 		this.setBookIsbn(bookIsbn);
 		this.setBookDescription(bookDescription);
 		this.setBookCategory(bookCategory);
+		this.setBookPublicationYear(bookPublicationYear);
 	}
 
 	public String getBookId() {
@@ -75,5 +77,13 @@ public class Book {
 
 	public void setBookCategory(List<Category> bookCategory) {
 		this.bookCategory = bookCategory;
+	}
+
+	public String getBookPublicationYear() {
+		return bookPublicationYear;
+	}
+
+	public void setBookPublicationYear(String bookPublicationYear) {
+		this.bookPublicationYear = bookPublicationYear;
 	}
 }

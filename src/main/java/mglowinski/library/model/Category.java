@@ -6,6 +6,7 @@ public enum Category {
 	Fantasy("Fantasy"),
 	Horror("Horror"),
 	Klasyka("Klasyka"),
+	Lektury_szkolne("Lektury"),
 	Obyczajowe("Obyczajowe"),
 	Powieść("Powieść"),
 	Romans("Romans"),
