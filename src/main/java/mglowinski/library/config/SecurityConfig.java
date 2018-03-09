@@ -1,4 +1,4 @@
-package mglowinski.library.security;
+package mglowinski.library.config;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
