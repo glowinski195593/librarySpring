@@ -9,4 +9,6 @@ public interface BorrowService {
 	List<Borrow> findAll();
 	
 	Borrow create(Borrow borrow);
+	
+	void deleteById(String borrowId);
 }

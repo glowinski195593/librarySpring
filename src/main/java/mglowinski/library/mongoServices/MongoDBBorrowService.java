@@ -30,4 +30,9 @@ public class MongoDBBorrowService implements BorrowService {
 		Borrow createdBorrow = borrowRepository.save(borrow);
 		return createdBorrow;
 	}
+	
+	@Override
+	public void deleteById(String borrowId) {
+		borrowRepository.delete(borrowId);
+	}
 }
