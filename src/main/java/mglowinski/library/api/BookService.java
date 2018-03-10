@@ -1,4 +1,4 @@
-package mglowinski.library.services;
+package mglowinski.library.api;
 
 import java.util.List;
 

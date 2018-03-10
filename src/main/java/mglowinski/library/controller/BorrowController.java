@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import mglowinski.library.api.BorrowService;
 import mglowinski.library.model.Borrow;
-import mglowinski.library.services.BorrowService;
 
 @RestController
 @RequestMapping("/api")

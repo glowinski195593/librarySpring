@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import mglowinski.library.api.BookService;
 import mglowinski.library.model.Book;
-import mglowinski.library.services.BookService;
 
 @RestController
 @RequestMapping("/api")

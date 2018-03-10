@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import mglowinski.library.api.BookService;
 import mglowinski.library.model.Book;
 import mglowinski.library.repository.BookRepository;
-import mglowinski.library.services.BookService;
 
 @Service
 public class MongoDBBookService implements BookService {
@@ -30,5 +30,5 @@ public class MongoDBBookService implements BookService {
 		Book createdBook = repository.save(book);
 		return createdBook;
 	}
-
 }
+

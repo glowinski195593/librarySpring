@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import mglowinski.library.api.BorrowService;
 import mglowinski.library.model.Borrow;
 import mglowinski.library.repository.BorrowRepository;
-import mglowinski.library.services.BorrowService;
 
 @Service
 public class MongoDBBorrowService implements BorrowService {
