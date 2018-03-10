@@ -5,12 +5,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import mglowinski.library.api.BookService;
+import mglowinski.library.api.IBook;
 import mglowinski.library.model.Book;
 import mglowinski.library.repository.BookRepository;
 
 @Service
-public class MongoDBBookService implements BookService {
+public class MongoDBBookService implements IBook {
 
 	private final BookRepository repository;
 	 

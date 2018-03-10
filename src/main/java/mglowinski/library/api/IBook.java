@@ -4,7 +4,7 @@ import java.util.List;
 
 import mglowinski.library.model.Book;
 
-public interface BookService {
+public interface IBook {
 
 	List<Book> findAll();
 	

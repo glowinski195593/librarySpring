@@ -10,17 +10,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import mglowinski.library.api.BorrowService;
+import mglowinski.library.api.IBorrow;
 import mglowinski.library.model.Borrow;
 
 @RestController
 @RequestMapping("/api")
 public class BorrowController {
 
-	private final BorrowService borrowService;
+	private final IBorrow borrowService;
 	
 	@Autowired
-	public BorrowController(BorrowService borrowService) {
+	public BorrowController(IBorrow borrowService) {
 		this.borrowService = borrowService;
 	}
 	

@@ -4,7 +4,7 @@ import java.util.List;
 
 import mglowinski.library.model.User;
 
-public interface UserService {
+public interface IUser {
 
 	List<User> findAll();
 	

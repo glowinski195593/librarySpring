@@ -8,17 +8,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import mglowinski.library.api.BookService;
+import mglowinski.library.api.IBook;
 import mglowinski.library.model.Book;
 
 @RestController
 @RequestMapping("/api")
 public class BookController {
 
-	private final BookService service;
+	private final IBook service;
 	  
 	@Autowired
-	BookController(BookService service) {
+	BookController(IBook service) {
 	    this.service = service;
 	}
 	  

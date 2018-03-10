@@ -5,12 +5,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import mglowinski.library.api.BorrowService;
+import mglowinski.library.api.IBorrow;
 import mglowinski.library.model.Borrow;
 import mglowinski.library.repository.BorrowRepository;
 
 @Service
-public class MongoDBBorrowService implements BorrowService {
+public class MongoDBBorrowService implements IBorrow {
 
 	private final BorrowRepository borrowRepository;
 	

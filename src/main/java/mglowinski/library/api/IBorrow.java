@@ -4,7 +4,7 @@ import java.util.List;
 
 import mglowinski.library.model.Borrow;
 
-public interface BorrowService {
+public interface IBorrow {
 
 	List<Borrow> findAll();
 	

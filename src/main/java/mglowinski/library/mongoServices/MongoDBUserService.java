@@ -7,12 +7,12 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import mglowinski.library.api.UserService;
+import mglowinski.library.api.IUser;
 import mglowinski.library.model.User;
 import mglowinski.library.repository.UserRepository;
 
 @Service
-public class MongoDBUserService implements UserService {
+public class MongoDBUserService implements IUser {
 
 	private final UserRepository repository;
 	private PasswordEncoder passwordEncoder;

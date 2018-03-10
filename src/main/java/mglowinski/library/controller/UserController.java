@@ -9,17 +9,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import mglowinski.library.api.UserService;
+import mglowinski.library.api.IUser;
 import mglowinski.library.model.User;
 
 @RestController
 @RequestMapping("/api")
 public class UserController {
 	
-	  private final UserService service;
+	  private final IUser service;
 	  
 	  @Autowired
-	  UserController(UserService service) {
+	  UserController(IUser service) {
 	      this.service = service;
 	  }
 	  
